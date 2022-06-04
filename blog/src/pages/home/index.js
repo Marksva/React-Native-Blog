@@ -40,9 +40,7 @@ export default function Home() {
     // Favoritando Categoria
     async function handleFavorite(id) {
         const response = await setFavorite(id)
-
-        // setFavCategory(response);
-        console.log(response)
+        setFavCategory(response)
         alert("categoria favoritada!")
     }
 
@@ -81,7 +79,7 @@ export default function Home() {
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={(item) => String(item.id)}
-                        renderItem={({item}) => <FavoritePost data={item}/> }
+                        renderItem={ ({item}) => <FavoritePost data={item} /> }
                     />
                 )}
 
